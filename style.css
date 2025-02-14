@@ -1,6 +1,6 @@
 body{
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
+   
     margin: 0px;
     font-family: sans-serif;
 }
@@ -11,7 +11,7 @@ header{
     margin-top: 10px;
 }
 
-.nav{
+nav{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,7 +22,7 @@ header{
 }
 
 
-.nav_lists{
+nav ul{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -33,14 +33,57 @@ header{
     margin-top: 20px;
 }
 
-li{
+nav li{
     padding: 10px;
     text-align: center;
     border-radius: 3px;
 }
 
-li:hover{
+nav ul li:hover{
     background-color: white;
     cursor: pointer;
 }
+
+.nav2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    background-color: #1ABC9C;
+    width: 150px;
+    margin: 0px;
+    padding-left: 10px;
+    color: #0800FB;
+}
+
+.nav2 ul li{
+    margin-top: 10px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.nav2 ul li:hover{
+    background-color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.produkt1 img{
+    background-size: cover;
+    margin: 10px;
+    
+    height: 200px;
+}
+
+
+
+.produkt1{
+    display: flex;
+    flex-direction: column;
+    background-color: #2980B9;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 300px;
+}
+
 

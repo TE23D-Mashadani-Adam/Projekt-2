@@ -1,8 +1,10 @@
 body{
     display: grid;
-   
     margin: 0px;
     font-family: sans-serif;
+    grid-template-rows: 1fr;
+    grid-template-columns: 29vh 100vh 1fr;
+    grid-template-areas: "nav nav nav" "sidebar main main";
 }
 
 header{
@@ -13,6 +15,7 @@ header{
 
 nav{
     display: flex;
+    grid-area: nav;
     flex-direction: column;
     align-items: center;
     width: 100%;
@@ -46,6 +49,7 @@ nav ul li:hover{
 
 .nav2{
     display: flex;
+    grid-area: sidebar;
     flex-direction: column;
     margin-left: 10px;
     background-color: #1ABC9C;
@@ -67,23 +71,68 @@ nav ul li:hover{
     border-radius: 3px;
 }
 
-.produkt1 img{
+.produkt img{
     background-size: cover;
-    margin: 10px;
-    
+    margin: 5px;
+    background-color: white;
     height: 200px;
 }
 
+.produkt p{
+    text-align: center;
+    color: white;
+}
 
-
-.produkt1{
+.produkt{
     display: flex;
     flex-direction: column;
     background-color: #2980B9;
     align-items: center;
     justify-content: center;
     width: 200px;
-    height: 300px;
+    height: 350px;
+}
+
+.produkt_img{
+    display: flex;
+    background-size: contain;
+    height: 50px;
+}
+
+.image_div{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 190px;
+    height: 280px;
+    margin-top: 10px;
+}
+
+.image_div button{
+    width: 40px;
+    height: 45px;
+    text-align: center;
+    margin-left: 140px;
+    margin-top: 10px;
+    background-color: #2ECC71;
+    border: none;
+    padding: 10px;
+    border-radius: 3px;
+    color: white;
+}
+
+.image_div button:hover{
+    filter: brightness(90%);
+    cursor: pointer;
+}
+
+main{
+    display: grid;
+    grid-area: main;
+    grid-template-columns: 40vh 40vh 40vh;
+    margin: 10px;
+    grid-row: 40vh 40vh 1fr;
+    row-gap: 10px;
 }
 
 

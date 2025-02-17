@@ -1,16 +1,22 @@
 body{
-    display: grid;
+    
     margin: 0px;
     font-family: sans-serif;
-    grid-template-rows: 1fr;
-    grid-template-columns: 29vh 100vh 1fr;
-    grid-template-areas: "nav nav nav" "sidebar main main";
 }
 
 header{
     font-size: 30px;
     font-weight: 200;
     margin-top: 10px;
+}
+
+.mitten_div{
+    display: grid;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    grid-template-columns: 1fr 5fr 3fr;
+    grid-template-areas: "sidebar main kundvagn";
 }
 
 nav{
@@ -131,8 +137,38 @@ main{
     grid-area: main;
     grid-template-columns: 40vh 40vh 40vh;
     margin: 10px;
-    grid-row: 40vh 40vh 1fr;
+    grid-row: 40vh 40vh;
     row-gap: 10px;
+}
+
+.kundvagn{
+    display: flex;
+    flex-direction: column;
+    grid-area: kundvagn;
+    height: 500px;
+    justify-content: space-between;
+    align-items: center;
+    border: #2ECC71 2px solid;
+    width: 250px;
+    margin: 10px;
+    padding: 10px;
+    justify-self: center;
+    border-radius: 5px;
+}
+
+.kundvagn button{
+    width: 120px;
+    text-align: center;
+    background-color: #2ECC71;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+}
+
+.kundvagn button:hover{
+    cursor: pointer;
+    filter: brightness(90%);
 }
 
 

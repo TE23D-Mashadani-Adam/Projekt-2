@@ -1,37 +1,37 @@
-body{
-    
+body {
+    display: grid;
     margin: 0px;
     font-family: sans-serif;
+    grid-template-areas: "nav";
 }
 
-header{
+header {
     font-size: 30px;
     font-weight: 200;
     margin-top: 10px;
 }
 
-.mitten_div{
+.mitten_div {
     display: grid;
-    flex-direction: row;
     width: 100%;
     height: fit-content;
     grid-template-columns: 1fr 5fr 3fr;
     grid-template-areas: "sidebar main kundvagn";
 }
 
-nav{
+nav {
     display: flex;
     grid-area: nav;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    background-color: #2ECC71 ;
+    background-color: #2ECC71;
     height: 120px;
     margin: 0px;
 }
 
 
-nav ul{
+nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -42,18 +42,18 @@ nav ul{
     margin-top: 20px;
 }
 
-nav li{
+nav li {
     padding: 10px;
     text-align: center;
     border-radius: 3px;
 }
 
-nav ul li:hover{
+nav ul li:hover {
     background-color: white;
     cursor: pointer;
 }
 
-.nav2{
+.nav2 {
     display: flex;
     grid-area: sidebar;
     flex-direction: column;
@@ -65,31 +65,31 @@ nav ul li:hover{
     color: #0800FB;
 }
 
-.nav2 ul li{
+.nav2 ul li {
     margin-top: 10px;
     padding: 5px;
     width: fit-content;
 }
 
-.nav2 ul li:hover{
+.nav2 ul li:hover {
     background-color: white;
     cursor: pointer;
     border-radius: 3px;
 }
 
-.produkt img{
+.produkt img {
     background-size: cover;
     margin: 5px;
     background-color: white;
     height: 200px;
 }
 
-.produkt p{
+.produkt p {
     text-align: center;
     color: white;
 }
 
-.produkt{
+.produkt {
     display: flex;
     flex-direction: column;
     background-color: #2980B9;
@@ -99,13 +99,13 @@ nav ul li:hover{
     height: 350px;
 }
 
-.produkt_img{
+.produkt_img {
     display: flex;
     background-size: contain;
     height: 50px;
 }
 
-.image_div{
+.image_div {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -114,7 +114,7 @@ nav ul li:hover{
     margin-top: 10px;
 }
 
-.image_div button{
+.image_div button {
     width: 40px;
     height: 45px;
     text-align: center;
@@ -127,12 +127,12 @@ nav ul li:hover{
     color: white;
 }
 
-.image_div button:hover{
+.image_div button:hover {
     filter: brightness(90%);
     cursor: pointer;
 }
 
-main{
+main {
     display: grid;
     grid-area: main;
     grid-template-columns: 40vh 40vh 40vh;
@@ -141,7 +141,7 @@ main{
     row-gap: 10px;
 }
 
-.kundvagn{
+.kundvagn {
     display: flex;
     flex-direction: column;
     grid-area: kundvagn;
@@ -156,7 +156,7 @@ main{
     border-radius: 5px;
 }
 
-.kundvagn button{
+.kundvagn button {
     width: 120px;
     text-align: center;
     background-color: #2ECC71;
@@ -166,9 +166,74 @@ main{
     padding: 10px;
 }
 
-.kundvagn button:hover{
+.kundvagn button:hover {
     cursor: pointer;
     filter: brightness(90%);
 }
 
+@media screen and (min-width: 100px) and (max-width: 700px) {
+    header {
+        font-size: 50px;
+    }
 
+    nav {
+        height: 350px;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        font-size: 30px;
+    }
+
+    .nav2 ul li {
+        font-size: 25px;
+    }
+
+    main {
+        grid-template-columns: 40vh;
+    }
+    .nav2{
+        display: none;
+    }
+    .mitten_div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image_div {
+        width: 290px;
+        height: 450px;
+        margin-bottom: 10px;
+        margin-top: 5px;
+    }
+    .produkt_img{
+        height: 50px;
+    }
+
+    .produkt {
+        width: 300px;
+        height: 450px;
+        justify-self: center;
+    }
+
+    .produkt button {
+        margin-left: 220px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .produkt p{
+        font-size: 20px;
+    }
+
+    .kundvagn {
+        width: 400px;
+        height: 1000px;
+    }
+}

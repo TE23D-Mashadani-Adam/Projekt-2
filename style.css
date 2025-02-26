@@ -3,6 +3,7 @@ body {
     margin: 0px;
     font-family: sans-serif;
     grid-template-areas: "nav";
+    grid-template-columns: 100vh;
 }
 
 header {
@@ -235,5 +236,10 @@ main {
     .kundvagn {
         width: 400px;
         height: 1000px;
+    }
+    .kundvagn button{
+        width: 200px;
+        height: 50px;
+        font-size: 20px;
     }
 }

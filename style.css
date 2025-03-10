@@ -4,13 +4,46 @@ body {
     font-family: sans-serif;
     grid-template-areas: "nav nav";
     grid-template-columns: 100vh;
+    min-width: 500px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-column: 1 / span 2;
+    grid-row: 3;
+    align-items: center;
+    color: white;
+    background-color: #2ECC71;
+}
+
+.copyright_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer_btn{
+    color: white;
+    text-decoration: none;
+}
+
+.footer_btn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+i {
+    color: black;
+    margin: 10px;
 }
 
 #icon {
     display: none;
 }
 
-.drop_down{
+.drop_down {
     display: flex;
     flex-direction: column;
     width: fit-content;
@@ -182,11 +215,35 @@ main {
     filter: brightness(90%);
 }
 
-.kundvagn_div_icon{
+.kundvagn_div_icon {
     display: none;
     flex-direction: row;
     width: 100%;
     justify-content: right;
+}
+
+.kundvagn_produkter{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 100%;
+    margin: 10px;
+    height: 800px;
+    font-family: cursive;
+}
+
+.produkt_inuti_kundvagn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px black solid;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.total_pris{
+    
 }
 
 
@@ -196,7 +253,7 @@ main {
         font-size: 50px;
     }
 
-    
+
 
     nav {
         height: 400px;
@@ -232,7 +289,7 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
+
     }
 
     .image_div {
@@ -277,50 +334,60 @@ main {
         color: black;
         display: inline;
     }
-    .kundvagn_div_icon{
+
+    .kundvagn_div_icon {
         display: flex;
         flex-direction: row;
         justify-content: right;
         margin-right: 20px;
     }
-    
+
 }
 
-@media screen and (min-width: 700px) and (max-width: 1024px){
-    body{
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    body {
         grid-template-columns: 1fr;
     }
-    .mitten_div{
+
+    .mitten_div {
         grid-template-rows: 1fr;
+        grid-template-columns: 0.5fr 1fr;
         grid-template-areas: "sidebar main kundvagn";
     }
-    nav ul{
+
+    nav ul {
         display: flex;
         flex-direction: row;
         justify-content: center;
     }
-    main{
+
+    main {
         grid-template-columns: 20vh 20vh;
-        grid-template-rows: 35vh 35vh 40vh;
+        grid-template-rows: 35vh 35vh 35vh;
         max-block-size: 1400px;
+        grid-column: 2;
+        
     }
-    nav{
+
+    nav {
         padding: 10px;
         width: 100%;
     }
-    .nav2{
+
+    .nav2 {
         grid-row: 1 / span 2;
         height: 100%;
     }
-    #kundvagn{
+
+    #kundvagn {
         grid-column: 2;
         grid-row: 2;
         justify-self: center;
         width: 400px;
-    }   
+    }
 
-    .produkt{
+    .produkt {
         justify-self: center;
     }
-    
+
 }

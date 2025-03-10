@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
+    <script defer src="script.js"></script>
   </head>
   <body>
     <nav>
@@ -49,12 +50,54 @@
       </div>
 
       <main>
-        <div class="produkt">
+        <div class="produkt" id="p1">
           <div class="image_div">
-            <button type="button">+</button>
+            <button type="button" onclick="AddItem()">+</button>
             <img
               class="produkt_img"
-              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.jpg"
+              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.webp"
+              alt="Protein pulver"
+            />
+          </div>
+          <div class="namn_pris">
+            <p id="pNamn1">Protein 1</p>
+            <p id="pris1">99kr</p>
+          </div>
+        </div>
+        <div class="produkt" id="p2">
+          <div class="image_div">
+            <button type="button" onclick="AddItem()">+</button>
+            <img
+              class="produkt_img"
+              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.webp"
+              alt="Protein pulver"
+            />
+          </div>
+          <div class="namn_pris">
+            <p id="pNamn2">Protein 1</p>
+            <p id="pris2">99kr</p>
+          </div>
+        </div>
+        <div class="produkt" id="p3">
+          <div class="image_div">
+            <button type="button" onclick="AddItem()">+</button>
+            <img
+              class="produkt_img"
+              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.webp"
+              alt="Protein pulver"
+            />
+          </div>
+          <div class="namn_pris">
+            <p id="pNamn3">Protein 1</p>
+            <p id="pris3">99kr</p>
+          </div>
+        </div>
+        <div class="produkt" id="p4">
+          <div class="image_div">
+            <button type="button" onclick="AddItem()">+</button>
+            <img
+              class="produkt_img"
+              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.webp"
               alt="Protein pulver"
             />
           </div>
@@ -63,12 +106,12 @@
             <p>99kr</p>
           </div>
         </div>
-        <div class="produkt">
+        <div class="produkt" id="p5">
           <div class="image_div">
-            <button type="button">+</button>
+            <button type="button" onclick="AddItem() & AddLowQualityItem()">+</button>
             <img
               class="produkt_img"
-              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.jpg"
+              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.webp"
               alt="Protein pulver"
             />
           </div>
@@ -77,54 +120,12 @@
             <p>99kr</p>
           </div>
         </div>
-        <div class="produkt">
+        <div class="produkt" id="p6">
           <div class="image_div">
-            <button type="button">+</button>
+            <button type="button" onclick="AddItem()">+</button>
             <img
               class="produkt_img"
-              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.jpg"
-              alt="Protein pulver"
-            />
-          </div>
-          <div class="namn_pris">
-            <p>Protein 1</p>
-            <p>99kr</p>
-          </div>
-        </div>
-        <div class="produkt">
-          <div class="image_div">
-            <button type="button">+</button>
-            <img
-              class="produkt_img"
-              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.jpg"
-              alt="Protein pulver"
-            />
-          </div>
-          <div class="namn_pris">
-            <p>Protein 1</p>
-            <p>99kr</p>
-          </div>
-        </div>
-        <div class="produkt">
-          <div class="image_div">
-            <button type="button">+</button>
-            <img
-              class="produkt_img"
-              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.jpg"
-              alt="Protein pulver"
-            />
-          </div>
-          <div class="namn_pris">
-            <p>Protein 1</p>
-            <p>99kr</p>
-          </div>
-        </div>
-        <div class="produkt">
-          <div class="image_div">
-            <button type="button">+</button>
-            <img
-              class="produkt_img"
-              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.jpg"
+              src="./Img/Optimum-Nutrition-Gold-Standard-Whey-2LB-French-Vanilla-Creme.webp"
               alt="Protein pulver"
             />
           </div>
@@ -140,6 +141,15 @@
         <button type="button" class="kundvagn_btn">Betala</button>
       </div>
     </div>
-    
+    <footer>
+      <p class="footer_btn">Jobba hos oss</p>
+      <p class="footer_btn">Ge oss feedback</p>
+      <p class="footer_btn">Gå till boxningsshop</p>
+
+      <div class="copyright_div">
+        <p>Copyright</p>
+        <i class="fa-solid fa-copyright"></i>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,5 +1,8 @@
 let addBtn = document.querySelector(".button");
 let kundvagn = document.querySelector(".kundvagn_produkter");
+let price_element = document.querySelector(".pris_element");
+totalPrice = document.createElement("p");
+
 
 //Ändrar bilderna
 let p1Img = document.querySelector("#p1 .image_div img");
@@ -57,6 +60,11 @@ let maxProductsInCart = 5;
 
 ImplementObjectInformation();
 
+let firstClick = false;
+let price = 0;
+
+
+//Lägger till rätt produkt i kundvagn när användare klickar
 document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".produkt button").forEach((button, i) => {
         button.addEventListener("click", function () {
@@ -66,22 +74,45 @@ document.addEventListener("DOMContentLoaded", function () {
                 let productDiv = document.createElement("div");
                 let cartItemName = document.createElement("p");
                 let cartItemPrice = document.createElement("p");
-                let totalPrice = document.querySelector("p");
+
+                //Product div elements
+                let priceInProductDiv = document.createElement("p");
+                let btnInProductDiv = document.createElement("button");
+                btnInProductDiv.style.backgroundColor = "red";
+                btnInProductDiv.textContent = "TA BORT";
 
                 productDiv.classList.add("produkt_inuti_kundvagn");
 
                 cartItemName.textContent = lista[i].name;
-                cartItemPrice.textContent = lista[i].price + " kr";
+                price += lista[i].price;
+                totalPrice.textContent = "Att betala: " + price + " kr";
+                priceInProductDiv.textContent = lista[i].price + "kr";
+
+                btnInProductDiv.addEventListener("click", function () {
+                    productDiv.remove();
+                    amountProductsInCart--;
+                    price -= lista[i].price;
+                    totalPrice.textContent = "Att betala:" + price + " kr";
+
+                    if (price <= 0) { totalPrice.textContent = ""; };
+                });
+
+                price_element.appendChild(totalPrice);
 
                 kundvagn.appendChild(productDiv);
+
+
                 productDiv.appendChild(cartItemName);
-                productDiv.appendChild(cartItemPrice);
+                productDiv.appendChild(priceInProductDiv);
+                productDiv.appendChild(btnInProductDiv);
+
+
 
                 amountProductsInCart++;
+                firstClick = true;
 
             }
-            else
-            {
+            else {
                 alert("Din kundvagn är full, du kan inte lägga till mer än 5 saker");
             }
         });
@@ -96,6 +127,8 @@ function AddItem() {
     kundvagn.appendChild(cartItem);
     console.log("Hello World");
 }
+
+
 
 //En metod för dålig kvalite produkt 
 function AddLowQualityItem() {

@@ -189,7 +189,7 @@ main {
     display: flex;
     flex-direction: column;
     grid-area: kundvagn;
-    height: 800px;
+    height: 1100px;
     justify-content: space-between;
     align-items: center;
     border: #2ECC71 2px solid;
@@ -228,7 +228,7 @@ main {
     align-items: left;
     width: 100%;
     margin: 10px;
-    height: 800px;
+    height: 900px;
     font-family: cursive;
 }
 
@@ -238,13 +238,15 @@ main {
     justify-content: center;
     align-items: center;
     border: 2px black solid;
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .total_pris{
     
 }
+
 
 
 

@@ -1,7 +1,6 @@
 body {
     display: grid;
     margin: 0px;
-    font-family: sans-serif;
     grid-template-areas: "nav nav";
     grid-template-columns: 100vh;
     min-width: 500px;
@@ -244,7 +243,7 @@ main {
 }
 
 .total_pris{
-    
+    font-size: 15px;
 }
 
 
@@ -254,8 +253,6 @@ main {
     header {
         font-size: 50px;
     }
-
-
 
     nav {
         height: 400px;
@@ -322,7 +319,7 @@ main {
 
     #kundvagn {
         width: 400px;
-        height: 1000px;
+        height: 1200px;
     }
 
     #kundvagn button {
@@ -343,6 +340,11 @@ main {
         justify-content: right;
         margin-right: 20px;
     }
+
+    .total_pris{
+        font-size: 22px; 
+    }
+
 
 }
 

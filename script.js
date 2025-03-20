@@ -3,9 +3,12 @@ let kundvagn = document.querySelector(".kundvagn_produkter");
 let price_element = document.querySelector(".pris_element");
 let totalPriceDiv = document.createElement("p");
 
+let more_icon = document.querySelector("#more_icon");
+
+
 let kundvagnDiv = document.querySelector("#kundvagn");
 
-
+const betalningNyckel = "betalning_nyckel";
 
 //Ändrar bilderna
 let p1Img = document.querySelector("#p1 .image_div img");
@@ -72,14 +75,42 @@ ImplementObjectInformation();
 let firstClick = false;
 let price = 0;
 
+let nav2_mobile = document.querySelector(".nav2_mobil");
+let main = document.querySelector("main");
+let nav2_mobile_opened = false;
+
 
 //Lägger till rätt produkt i kundvagn när användare klickar
 document.addEventListener("DOMContentLoaded", function () {
+
+    more_icon.addEventListener("click", function () {
+        if (!nav2_mobile_opened) {
+            nav2_mobile.style.display = "flex";
+            main.style.display = "none";
+            kundvagnDiv.style.display = "none";
+            nav2_mobile_opened = true;
+        }else{
+            nav2_mobile.style.display = "none";
+            main.style.display = "flex";
+            kundvagnDiv.style.display = "flex";
+            nav2_mobile_opened = false;
+        }
+    });
+
+
     document.querySelectorAll(".produkt button").forEach((button, i) => {
         button.addEventListener("click", function () {
-            AddToCart(i);
+            CartFunction(i);
         });
+
     });
+
+    let kundvagnBtn = document.querySelector(".kundvagn_btn");
+    kundvagnBtn.addEventListener("click", function () {
+        SparaPrisLocalStorage(price);
+        window.location.href = "http://127.0.0.1:5500/betalning.html";
+    });
+
 });
 
 
@@ -94,7 +125,7 @@ function AddLowQualityItem() {
 function ImplementObjectInformation() {
     let elements = [p1, p2, p3, p4, p5, p6];
 
-    for (let i = 0; i < lista.length; i++) {
+    for (let i = 0; i < elements.length; i++) {
         elements[i][0].textContent = lista[i].name;
         elements[i][1].textContent = lista[i].price + " kr";
     }
@@ -102,11 +133,13 @@ function ImplementObjectInformation() {
 
 let cart = [];
 
-function AddToCart(i) {
-    if (amountProductsInCart < maxProductsInCart) {
-        
+function CartFunction(i) {
+
+    if (amountProductsInCart < maxProductsInCart && !cart.includes(i)) {
+
         let productDiv = document.createElement("div");
         productDiv.classList.add("produkt_inuti_kundvagn");
+
 
         let cartItemName = document.createElement("p");
         cartItemName.textContent = lista[i].name;
@@ -118,7 +151,7 @@ function AddToCart(i) {
         btnInProductDiv.style.backgroundColor = "red";
         btnInProductDiv.textContent = "TA BORT";
 
-     
+
         totalPriceDiv.classList.add("total_pris");
 
         let quantityInput = document.createElement("input");
@@ -127,6 +160,7 @@ function AddToCart(i) {
         quantityInput.min = 1;
         quantityInput.max = 20;
 
+
         quantityInput.addEventListener("input", function () {
             if (quantityInput.value > 20) {
                 quantityInput.value = 20;
@@ -134,6 +168,7 @@ function AddToCart(i) {
             else if (quantityInput.value < 1) {
                 quantityInput.value = 1;
             }
+
             let previousPrice = lista[i].price * lista[i].quantity;
             price -= previousPrice;
 
@@ -153,11 +188,14 @@ function AddToCart(i) {
         price += totalPrice;
         totalPriceDiv.textContent = "Att betala: " + price + " kr";
 
-           
 
         btnInProductDiv.addEventListener("click", function () {
             productDiv.remove();
             amountProductsInCart--;
+
+            let index = cart.indexOf(i);
+            cart.splice(index);
+
             price -= lista[i].price * quantityInput.value;
             UpdatePriceInCart(price, totalPriceDiv, lista, i);
 
@@ -165,26 +203,37 @@ function AddToCart(i) {
             else {
                 totalPriceDiv.textContent = "Att betala: " + price + " kr";
             }
-        
 
-        kundvagnDiv.style.height += productDiv.style.height;
+            kundvagnDiv.style.height += productDiv.style.height;
+            SparaPrisLocalStorage(price);
 
         });
-
 
         productDiv.append(cartItemName, priceInProductDiv, quantityInput, btnInProductDiv);
         kundvagn.appendChild(productDiv);
         price_element.appendChild(totalPriceDiv);
 
+
+
         amountProductsInCart++;
         cart.push(i);
     }
     else {
-        alert("Din kundvagn är full, du kan inte lägga till mer än 5 saker");
+        if (cart.includes[i]) {
+            alert("Din kundvagn är full, du kan inte lägga till mer än 5 saker");
+        }
+        else {
+            alert("Produkten finns redan i kundvagnen");
+        }
     }
 }
 
 
 function UpdatePriceInCart(price, totalPrice, lista, i) {
     totalPrice.textContent = price > 0 ? "Att betala: " + price + " kr" : "";
+}
+
+function SparaPrisLocalStorage(price) {
+    let totalPris = JSON.stringify(price);
+    window.localStorage.setItem(betalningNyckel, totalPris);
 }

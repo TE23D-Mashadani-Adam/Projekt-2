@@ -3,7 +3,7 @@ body {
     margin: 0px;
     grid-template-areas: "nav nav";
     grid-template-columns: 100vh;
-    min-width: 500px;
+    min-width: 500px;   
 }
 
 footer {
@@ -246,12 +246,30 @@ main {
     font-size: 15px;
 }
 
+.nav2_mobil{
+    display: none;
+    flex-direction: column;
+    margin: 10px;
+    font-size: 30px;
+    background-color: #1ABC9C;
+}
 
+
+#more_icon{
+    display: none;
+    font-size: 20px;
+    margin-right: 600px;
+}
 
 
 @media screen and (min-width: 100px) and (max-width: 700px) {
+   
     header {
         font-size: 50px;
+    }
+
+    #more_icon{
+        display: inline;
     }
 
     nav {
@@ -337,7 +355,7 @@ main {
     .kundvagn_div_icon {
         display: flex;
         flex-direction: row;
-        justify-content: right;
+        justify-content: space-between;
         margin-right: 20px;
     }
 
@@ -347,6 +365,8 @@ main {
 
 
 }
+
+
 
 @media screen and (min-width: 700px) and (max-width: 1024px) {
     body {

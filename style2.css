@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+}
+
+.betalnings_div{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+    height: 30vh;
+    border: 2px green solid;
+    margin: 10px;
+}
+
+.avgifter_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+button{
+    height: 40px;
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    background-color: #2ECC71;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+button:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top: 20px;
+    color: white;
+    background-color: #2ECC71;
+    height: 80vh;
+}
+
+.footer_btn{
+    color: white;
+    text-decoration: none;
+}
+
+.footer_btn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.total_pris{
+    width: 100px;
+}
+
+@media screen and (min-width: 100px) and (max-width: 700px) {
+    .betalnings_div{
+        flex-direction: column;
+        height: 60vh;
+    }
+    .avgifter_div{
+        align-items: start;
+    }
+    p{
+        width: 200px;
+    }
+}

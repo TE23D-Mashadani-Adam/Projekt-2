@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let kundvagnBtn = document.querySelector(".kundvagn_btn");
     kundvagnBtn.addEventListener("click", function () {
         SparaPrisLocalStorage(price);
-        window.location.href = "http://127.0.0.1:5500/betalning.html";
+        window.location.replace("http://127.0.0.1:5500/betalning.html");
     });
 
 });

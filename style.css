@@ -1,9 +1,9 @@
 body {
+    margin: 0;
     display: grid;
-    margin: 0px;
-    grid-template-areas: "nav nav";
-    grid-template-columns: 100vh;
-    min-width: 500px;   
+    grid-template-areas: "nav" "mitten_div" "footer";
+    grid-template-rows: auto 1fr auto; 
+    height: 100vh; 
 }
 
 footer {
@@ -57,6 +57,7 @@ header {
 .mitten_div {
     display: grid;
     width: 100%;
+    grid-area: mitten_div;
     height: fit-content;
     grid-template-columns: 1fr 5fr 3fr;
     grid-template-areas: "sidebar main kundvagn";
@@ -105,7 +106,8 @@ nav ul li:hover {
     width: 150px;
     margin: 0px;
     padding-left: 10px;
-    color: #0800FB;
+    color: black;
+    font-family: monospace;
 }
 
 .nav2 ul li {
@@ -195,7 +197,7 @@ main {
     width: 250px;
     margin: 10px;
     padding: 10px;
-    justify-self: right;
+    justify-self: center;
     border-radius: 5px;
 }
 
@@ -386,9 +388,8 @@ main {
     }
 
     main {
-        grid-template-columns: 20vh 20vh;
-        grid-template-rows: 35vh 35vh 35vh;
-        max-block-size: 1400px;
+        grid-template-columns: 30vw 30vw;
+        grid-template-rows: auto auto auto;
         grid-column: 2;
         
     }

@@ -6,6 +6,7 @@ let totalPriceDiv = document.createElement("p");
 let more_icon = document.querySelector("#more_icon");
 
 
+
 let kundvagnDiv = document.querySelector("#kundvagn");
 
 const betalningNyckel = "betalning_nyckel";
@@ -68,7 +69,7 @@ let lista = [
 ];
 
 let amountProductsInCart = 0;
-let maxProductsInCart = 5;
+let maxProductsInCart = 4;
 
 ImplementObjectInformation();
 
@@ -82,6 +83,8 @@ let nav2_mobile_opened = false;
 
 //Lägger till rätt produkt i kundvagn när användare klickar
 document.addEventListener("DOMContentLoaded", function () {
+
+    localStorage.clear();
 
     more_icon.addEventListener("click", function () {
         if (!nav2_mobile_opened) {
@@ -220,7 +223,7 @@ function CartFunction(i) {
     }
     else {
         if (cart.includes[i]) {
-            alert("Din kundvagn är full, du kan inte lägga till mer än 5 saker");
+            alert("Din kundvagn är full, du kan inte lägga till mer än 4 saker");
         }
         else {
             alert("Produkten finns redan i kundvagnen");

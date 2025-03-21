@@ -2,7 +2,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-areas: "nav" "mitten_div" "footer";
-    grid-template-rows: auto 1fr auto; 
+    grid-template-rows: auto auto auto; 
     height: 100vh; 
 }
 
@@ -180,7 +180,7 @@ nav ul li:hover {
 main {
     display: grid;
     grid-area: main;
-    grid-template-columns: 40vh 40vh 40vh;
+    grid-template-columns: 20vw 20vw 20vw;
     grid-template-rows: 65vh 65vh;
     margin: 10px;
     row-gap: 10px;
@@ -254,6 +254,7 @@ main {
     margin: 10px;
     font-size: 30px;
     background-color: #1ABC9C;
+    grid-area: nav2;
 }
 
 
@@ -265,7 +266,7 @@ main {
 
 
 @media screen and (min-width: 100px) and (max-width: 700px) {
-   
+ 
     header {
         font-size: 50px;
     }
@@ -363,6 +364,11 @@ main {
 
     .total_pris{
         font-size: 22px; 
+    }
+
+    .nav2_mobil{
+        width: 100%;
+        height: 100%;
     }
 
 

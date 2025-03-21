@@ -157,11 +157,18 @@ function CartFunction(i) {
 
         totalPriceDiv.classList.add("total_pris");
 
+        let input_div = document.createElement("div");
+
+        let label = document.createElement("label");
         let quantityInput = document.createElement("input");
+
+        label.textContent = "Antal";
         quantityInput.type = "number";
         quantityInput.value = 1;
         quantityInput.min = 1;
         quantityInput.max = 20;
+
+        input_div.append(quantityInput, label);
 
 
         quantityInput.addEventListener("input", function () {
@@ -212,11 +219,9 @@ function CartFunction(i) {
 
         });
 
-        productDiv.append(cartItemName, priceInProductDiv, quantityInput, btnInProductDiv);
+        productDiv.append(cartItemName, priceInProductDiv, input_div, btnInProductDiv);
         kundvagn.appendChild(productDiv);
         price_element.appendChild(totalPriceDiv);
-
-
 
         amountProductsInCart++;
         cart.push(i);
